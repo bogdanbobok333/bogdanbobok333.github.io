@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AstroLight Daily — Политика конфиденциальности</title>
+<meta name="description" content="Политика конфиденциальности приложения AstroLight Daily для Windows и Android.">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1c1b1f; --muted:#5b5966;
+    --rule:#e3e1e8; --accent:#6c4ea3; --card:#f7f5fb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141317; --fg:#e7e5ec; --muted:#a9a6b4;
+           --rule:#2c2a33; --accent:#b79cf0; --card:#1d1b22; }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.65 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:40px 16px 80px}
+  header{border-bottom:1px solid var(--rule); padding-bottom:24px; margin-bottom:8px}
+  h1{font-size:1.7rem; line-height:1.25; margin:0 0 6px}
+  h2{font-size:1.18rem; margin:34px 0 10px; line-height:1.3}
+  h3{font-size:1rem; margin:22px 0 6px}
+  p,li{margin:0 0 12px}
+  ul{padding-left:22px}
+  a{color:var(--accent)}
+  .meta{color:var(--muted); font-size:.9rem; margin:0}
+  .meta b{color:var(--fg); font-weight:600}
+  .lede{background:var(--card); border-left:3px solid var(--accent);
+        padding:16px 18px; border-radius:0 8px 8px 0; margin:24px 0}
+  .lede p:last-child{margin-bottom:0}
+  .langs{display:flex; gap:8px; margin:18px 0 0}
+  .langs button{
+    font:inherit; font-size:.88rem; cursor:pointer;
+    padding:6px 14px; border-radius:999px;
+    border:1px solid var(--rule); background:transparent; color:var(--muted);
+  }
+  .langs button[aria-pressed="true"]{
+    border-color:var(--accent); color:var(--bg); background:var(--accent);
+  }
+  code{background:var(--card); padding:1px 5px; border-radius:4px; font-size:.9em}
+  footer{margin-top:48px; padding-top:20px; border-top:1px solid var(--rule);
+         color:var(--muted); font-size:.9rem}
+  /* Без JS видны оба языка — это лучше, чем пустая страница. */
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>AstroLight Daily — Политика конфиденциальности</h1>
+  <p class="meta">
+    Приложение: <b>AstroLight Daily</b> (Windows и Android) ·
+    Разработчик: <b>Bohdan Bobok</b>, Украина ·
+    Дата вступления в силу: <b>22 сентября 2026 г.</b>
+  </p>
+  <div class="langs">
+    <button type="button" id="btn-ru" aria-pressed="true">Русский</button>
+    <button type="button" id="btn-en" aria-pressed="false">English</button>
+  </div>
+</header>
+
+<!-- ─────────────────────────── RU ─────────────────────────── -->
+<main id="ru">
+
+<div class="lede">
+<h2 style="margin-top:0">Коротко</h2>
+<p>AstroLight Daily работает на вашем устройстве. У приложения нет ни учётных записей,
+ни серверов: разработчик не получает и не хранит никаких ваших данных. Всё, что вы
+вводите, остаётся на вашем компьютере или телефоне.</p>
+<p>Есть два исключения, когда приложение выходит в интернет, и оба описаны ниже.</p>
+</div>
+
+<h2>Какие данные вы вводите и где они лежат</h2>
+<p>Чтобы построить карту, приложение просит дату, время и место рождения, а также
+название карты, которое вы придумываете сами. Эти данные, сохранённые карты, настройки,
+тексты разборов и кэш хранятся <b>только локально</b>:</p>
+<ul>
+  <li>Windows: <code>%APPDATA%\AstroLightDaily</code></li>
+  <li>Android: во внутреннем хранилище приложения</li>
+</ul>
+<p>Приложение не собирает идентификаторы устройства, не ведёт аналитику, не показывает
+рекламу и не отправляет статистику использования. Удаление приложения удаляет и эти
+данные; на Windows папку <code>%APPDATA%\AstroLightDaily</code> при необходимости нужно
+удалить вручную.</p>
+<p>Поиск города идёт по справочнику городов, входящему в комплект, и никуда не
+обращается. Астрологические расчёты выполняет встроенная библиотека Swiss Ephemeris с
+локальными эфемеридами. Без функций, перечисленных ниже, приложение полностью
+работоспособно офлайн.</p>
+
+<h2>1. ИИ-разборы (по вашему желанию, выключены по умолчанию)</h2>
+<p>В приложении есть разборы, которые составляет языковая модель. Функция выключена до
+тех пор, пока вы сами не включите её и не введёте свой ключ API.</p>
+
+<h3>Как это устроено</h3>
+<p>Вы выбираете провайдера — Google Gemini, OpenAI или Anthropic — и вводите ключ API,
+полученный вами у этого провайдера напрямую. Запрос уходит с вашего устройства сразу на
+сервер провайдера. Разработчик в этом обмене не участвует: у него нет промежуточного
+сервера, он не видит ни запросов, ни ответов, ни вашего ключа.</p>
+
+<h3>Что уходит провайдеру</h3>
+<p>Астрологический материал, рассчитанный из введённых вами данных рождения: положения
+планет и домов, аспекты, даты транзитов, тексты толкований из справочника, а в части
+разборов — дата, время и место рождения. Туда же попадают уточняющие вопросы, которые
+вы задаёте в диалоге разбора. Название карты, которое вы дали ей сами, в запрос не
+включается.</p>
+
+<h3>Ваш ключ API</h3>
+<p>Хранится на устройстве и передаётся только выбранному вами провайдеру — для
+авторизации запроса. Он не попадает в экспортируемые файлы, уведомления и сохранённые
+разборы.</p>
+
+<h3>Дальнейшая судьба данных</h3>
+<p>Определяется условиями провайдера, которого выбрали вы, а не разработчика приложения:</p>
+<ul>
+  <li>Google Gemini API — <a href="https://ai.google.dev/gemini-api/terms">ai.google.dev/gemini-api/terms</a></li>
+  <li>OpenAI API — <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a></li>
+  <li>Anthropic API — <a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a></li>
+</ul>
+<p>Провайдер, помимо содержимого запроса, видит IP-адрес вашего подключения. В некоторых
+разборах модели разрешён поиск в интернете на стороне провайдера — тогда поисковые
+запросы формирует и выполняет он.</p>
+<p>Если ИИ-функции выключены, ничего из перечисленного не происходит.</p>
+<p><b>Совет.</b> Языковая модель — это внешний сервис. Не вводите в уточняющих вопросах
+сведения, которые не хотели бы ему передавать.</p>
+
+<h2>2. Раздел «Наши приложения»</h2>
+<p>Раздел показывает другие приложения разработчика. Чтобы взять их названия и значки,
+приложение обращается к общедоступным страницам Google Play. Никакие ваши данные при
+этом не передаются; Google, как и любой веб-сервер, видит IP-адрес подключения.
+Обращение выполняется не чаще раза в сутки и только при открытии раздела.</p>
+
+<h2>Покупка</h2>
+<p>Приложение распространяется через Microsoft Store и Google Play. Оплату обрабатывает
+магазин по своим правилам; разработчик не получает данные вашей карты и платёжные
+реквизиты.</p>
+<ul>
+  <li>Microsoft — <a href="https://privacy.microsoft.com/privacystatement">privacy.microsoft.com/privacystatement</a></li>
+  <li>Google — <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+</ul>
+
+<h2>Дети</h2>
+<p>Приложение не предназначено для лиц младше 16 лет и намеренно не собирает их данные.
+Поскольку приложение вообще не передаёт разработчику никаких данных, собрать их у
+ребёнка оно не может.</p>
+
+<h2>Ваши права</h2>
+<p>Все ваши данные находятся у вас. Вы в любой момент можете просмотреть, изменить или
+удалить сохранённые карты, разборы и настройки прямо в приложении, а также удалить папку
+с данными целиком. Запрашивать у разработчика удаление данных не требуется — у него их
+нет.</p>
+<p>Если провайдер ИИ сохранил ваши запросы на своей стороне, обращаться за их удалением
+нужно к этому провайдеру, по ссылкам выше.</p>
+
+<h2>Назначение приложения</h2>
+<p>AstroLight Daily — приложение развлекательного и справочного характера. Его расчёты и
+тексты, включая составленные языковой моделью, не являются медицинской, юридической,
+финансовой или психологической консультацией.</p>
+
+<h2>Изменения политики</h2>
+<p>При изменении политики обновляется дата вступления в силу и публикуется новая редакция
+по тому же адресу. Существенные изменения будут отмечены в описании обновления
+приложения.</p>
+
+<h2>Связь</h2>
+<p>По любым вопросам об этой политике:
+<a href="mailto:bogdabobok06081995@gmail.com">bogdabobok06081995@gmail.com</a></p>
+
+</main>
+
+<!-- ─────────────────────────── EN ─────────────────────────── -->
+<main id="en">
+
+<div class="lede">
+<h2 style="margin-top:0">In short</h2>
+<p>AstroLight Daily runs on your device. There are no accounts and no servers behind it:
+the developer neither receives nor stores any of your data. Everything you enter stays on
+your computer or phone.</p>
+<p>There are two cases where the app goes online, and both are described below.</p>
+</div>
+
+<h2>What you enter, and where it is kept</h2>
+<p>To draw a chart the app asks for a date, a time and a place of birth, plus a chart name
+that you choose yourself. That data, your saved charts, settings, readings and cache are
+stored <b>locally only</b>:</p>
+<ul>
+  <li>Windows: <code>%APPDATA%\AstroLightDaily</code></li>
+  <li>Android: the app's internal storage</li>
+</ul>
+<p>The app collects no device identifiers, runs no analytics, shows no adverts and sends
+no usage statistics. Uninstalling removes this data; on Windows the folder
+<code>%APPDATA%\AstroLightDaily</code> may need to be deleted by hand.</p>
+<p>City lookup uses a city list bundled with the app and contacts nothing. Astrological
+calculations are performed by the built-in Swiss Ephemeris library using local ephemeris
+files. Without the features listed below, the app is fully functional offline.</p>
+
+<h2>1. AI readings (optional, off by default)</h2>
+<p>The app can produce readings written by a large language model. The feature stays off
+until you switch it on and enter your own API key.</p>
+
+<h3>How it works</h3>
+<p>You choose a provider — Google Gemini, OpenAI or Anthropic — and enter an API key that
+you obtained from that provider yourself. The request goes from your device straight to
+the provider's servers. The developer is not part of that exchange: there is no
+intermediate server, and the developer sees neither your requests, nor the answers, nor
+your key.</p>
+
+<h3>What is sent to the provider</h3>
+<p>Astrological material computed from the birth data you entered: planet and house
+positions, aspects, transit dates, reference interpretation texts, and, in some readings,
+the date, time and place of birth. Any follow-up questions you type into a reading are
+sent as well. The chart name you chose is not included in the request.</p>
+
+<h3>Your API key</h3>
+<p>Stored on the device and transmitted only to the provider you selected, to authorise
+the request. It never appears in exported files, notifications or saved readings.</p>
+
+<h3>What happens to the data afterwards</h3>
+<p>This is governed by the terms of the provider <i>you</i> selected, not by the
+developer:</p>
+<ul>
+  <li>Google Gemini API — <a href="https://ai.google.dev/gemini-api/terms">ai.google.dev/gemini-api/terms</a></li>
+  <li>OpenAI API — <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a></li>
+  <li>Anthropic API — <a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a></li>
+</ul>
+<p>Besides the contents of the request, the provider sees your connection's IP address. In
+some readings the model is allowed to search the web on the provider's side; those
+searches are composed and performed by the provider.</p>
+<p>If the AI features are switched off, none of the above takes place.</p>
+<p><b>A note of caution.</b> A language model is an outside service. Do not type into
+follow-up questions anything you would not want to hand to it.</p>
+
+<h2>2. The &quot;Our apps&quot; section</h2>
+<p>This section lists the developer's other applications. To fetch their names and icons
+the app requests public Google Play pages. None of your data is sent; like any web server,
+Google sees the connection's IP address. The request is made at most once a day and only
+when the section is opened.</p>
+
+<h2>Purchase</h2>
+<p>The app is distributed through the Microsoft Store and Google Play. Payment is handled
+by the store under its own terms; the developer does not receive your card or payment
+details.</p>
+<ul>
+  <li>Microsoft — <a href="https://privacy.microsoft.com/privacystatement">privacy.microsoft.com/privacystatement</a></li>
+  <li>Google — <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+</ul>
+
+<h2>Children</h2>
+<p>The app is not directed at anyone under 16 and deliberately collects no data from them.
+Since the app transmits no data to the developer at all, it cannot collect data from a
+child either.</p>
+
+<h2>Your rights</h2>
+<p>All of your data is in your hands. You can view, change or delete saved charts, readings
+and settings inside the app at any time, or delete the data folder outright. There is no
+need to ask the developer to erase your data — the developer does not hold any.</p>
+<p>If an AI provider has retained your requests on its side, a deletion request must be
+addressed to that provider, via the links above.</p>
+
+<h2>What the app is for</h2>
+<p>AstroLight Daily is an entertainment and reference application. Its calculations and
+texts, including those written by a language model, are not medical, legal, financial or
+psychological advice.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the effective date is updated and the new version is published
+at the same address. Material changes will be noted in the app's update description.</p>
+
+<h2>Contact</h2>
+<p>For any question about this policy:
+<a href="mailto:bogdabobok06081995@gmail.com">bogdabobok06081995@gmail.com</a></p>
+
+</main>
+
+<footer>
+  <p>AstroLight Daily · Bohdan Bobok · bogdabobok06081995@gmail.com</p>
+</footer>
+
+</div>
+
+<script>
+// Переключатель языка. Если скрипт не выполнится, видны оба раздела —
+// страница остаётся читаемой, а не пустой.
+(function(){
+  var ru = document.getElementById('ru'),  en = document.getElementById('en');
+  var bru = document.getElementById('btn-ru'), ben = document.getElementById('btn-en');
+  function show(lang){
+    var isRu = lang === 'ru';
+    ru.classList.toggle('hidden', !isRu);
+    en.classList.toggle('hidden',  isRu);
+    bru.setAttribute('aria-pressed', String(isRu));
+    ben.setAttribute('aria-pressed', String(!isRu));
+    document.documentElement.lang = lang;
+    try { location.hash = lang; } catch (e) {}
+  }
+  bru.addEventListener('click', function(){ show('ru') });
+  ben.addEventListener('click', function(){ show('en') });
+  // Язык браузера решает, что показать первым; #en / #ru в адресе важнее.
+  var h = (location.hash || '').replace('#','');
+  show(h === 'en' || h === 'ru' ? h
+       : (/^(ru|uk|be|kk)/i.test(navigator.language || '') ? 'ru' : 'en'));
+})();
+</script>
+</body>
+</html>

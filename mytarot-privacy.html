@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — My Tarot for Windows</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         line-height: 1.6; color: #1a1a1a; background: #fff;
+         max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  .meta { color: #666; font-size: .9rem; margin-bottom: 2rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .35rem 0; }
+  code { background: #f2f2f2; padding: .1rem .3rem; border-radius: 3px; font-size: .9em; }
+  a { color: #1565c0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid #ddd; padding: .5rem .6rem; text-align: left; vertical-align: top; }
+  th { background: #f7f7f7; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #121212; color: #e8e8e8; }
+    .meta { color: #9e9e9e; }
+    code { background: #262626; }
+    a { color: #64b5f6; }
+    th, td { border-color: #333; }
+    th { background: #1c1c1c; }
+  }
+</style>
+</head>
+<body>
+<h1>Privacy Policy</h1>
+<p class="meta">
+  My Tarot for Windows (Microsoft Store ID <code>9NX4M09WBZTH</code>)<br>
+  Developer: Bohdan Bobok &middot; Effective date: 23 September 2026</p>
+
+<h2>Summary</h2>
+<p>My Tarot does not collect, store or transmit personal information to the
+developer. There are no accounts, no advertising and no analytics. The deck,
+the card meanings and the spreads work entirely offline.</p>
+<p>The app connects to the internet in exactly two situations, both described
+below.</p>
+
+<h2>What is stored on your computer</h2>
+<p>Everything the app saves stays in <code>%LOCALAPPDATA%\MyTarot</code> on your
+own computer.</p>
+<table>
+  <tr><th>What</th><th>Where</th><th>Why</th></tr>
+  <tr><td>Settings: language, theme, card back, reversed-cards mode</td>
+      <td><code>prefs\tarot_settings.properties</code></td>
+      <td>to survive a restart</td></tr>
+  <tr><td>Your AI provider key and the selected model</td>
+      <td><code>prefs\tarot_ai.properties</code></td>
+      <td>so you do not re-enter the key</td></tr>
+  <tr><td>Cached AI answers</td>
+      <td><code>prefs\tarot_ai_cache.properties</code></td>
+      <td>so a repeated reading costs no quota</td></tr>
+  <tr><td>"Our apps" list and logos</td>
+      <td><code>our-apps-cache.json</code>, <code>cache\store-icons\</code></td>
+      <td>so the screen opens without a connection</td></tr>
+  <tr><td>Reports you file about an AI answer</td>
+      <td><code>ai_reports.txt</code></td>
+      <td>so you can forward them to the developer</td></tr>
+</table>
+<p>None of this is sent anywhere on its own. To delete all of it, delete the
+folder <code>%LOCALAPPDATA%\MyTarot</code>.</p>
+
+<h2>When the app goes online</h2>
+
+<h3>1. AI readings</h3>
+<p>Only if you turn them on in Settings and enter your own API key. The app then
+sends to the provider <em>you</em> chose (Google Gemini, or any
+OpenAI-compatible service whose address you supply): the card name, its position
+in the spread, the interface language, and your question if you asked one. Your
+key is sent to that provider only, as proof that the request is yours.</p>
+<p>What the provider does with the request is governed by its own policy:</p>
+<ul>
+  <li>Google Gemini — <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+  <li>OpenAI — <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a></li>
+  <li>any other service — the policy of the service whose address you entered</li>
+</ul>
+<p>The developer of My Tarot has no access to these requests and never sees
+them. If AI readings are off — which is the default — the app makes no such
+requests at all.</p>
+
+<h3>2. The "Our apps" list</h3>
+<p>Once a day the app asks the public Microsoft Store catalogue for the names,
+prices and logos of apps by the same publisher. The request is anonymous: it
+contains nothing about you or your computer, only the publisher code and the
+market code (the country whose price the Store should show). The answer is
+saved to disk so the screen also opens without a connection.</p>
+
+<h2>What the app does not do</h2>
+<ul>
+  <li>does not collect device, user or usage information;</li>
+  <li>shows no advertising and contains no advertising SDKs;</li>
+  <li>does not share data with third parties;</li>
+  <li>does not use the microphone, camera, location, contacts, or files outside
+      its own data folder.</li>
+</ul>
+
+<h2>Children</h2>
+<p>The app is not directed at children under 12 and collects no data from
+anyone, children included.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version will be published at this same
+address and the date above updated.</p>
+
+<h2>Contact</h2>
+<p>Questions about the app or this policy:
+<a href="mailto:bogdabobok06081995@gmail.com">bogdabobok06081995@gmail.com</a></p>
+</body>
+</html>

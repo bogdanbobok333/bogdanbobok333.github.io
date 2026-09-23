@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audio Converter and Cutter — Политика конфиденциальности</title>
+<meta name="description" content="Политика конфиденциальности приложения Audio Converter and Cutter для Windows.">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1c1b1f; --muted:#5b5966;
+    --rule:#e3e1e8; --accent:#c2268f; --card:#fbf4f9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141317; --fg:#e7e5ec; --muted:#a9a6b4;
+           --rule:#2c2a33; --accent:#f07ac4; --card:#1f1a1e; }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.65 -apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:40px 16px 80px}
+  header{border-bottom:1px solid var(--rule); padding-bottom:24px; margin-bottom:8px}
+  h1{font-size:1.7rem; line-height:1.25; margin:0 0 6px}
+  h2{font-size:1.18rem; margin:34px 0 10px; line-height:1.3}
+  p,li{margin:0 0 12px}
+  ul{padding-left:22px}
+  a{color:var(--accent)}
+  .meta{color:var(--muted); font-size:.9rem; margin:0}
+  .meta b{color:var(--fg); font-weight:600}
+  .lede{background:var(--card); border-left:3px solid var(--accent);
+        padding:16px 18px; border-radius:0 8px 8px 0; margin:24px 0}
+  .lede p:last-child{margin-bottom:0}
+  .langs{display:flex; gap:8px; margin:18px 0 0}
+  .langs button{
+    font:inherit; font-size:.88rem; cursor:pointer;
+    padding:6px 14px; border-radius:999px;
+    border:1px solid var(--rule); background:transparent; color:var(--muted);
+  }
+  .langs button[aria-pressed="true"]{
+    border-color:var(--accent); color:var(--bg); background:var(--accent);
+  }
+  code{background:var(--card); padding:1px 5px; border-radius:4px; font-size:.9em}
+  footer{margin-top:48px; padding-top:20px; border-top:1px solid var(--rule);
+         color:var(--muted); font-size:.9rem}
+  /* Без JS видны оба языка — это лучше, чем пустая страница. */
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Audio Converter and Cutter — Политика конфиденциальности</h1>
+  <p class="meta">
+    Приложение: <b>Audio Converter and Cutter</b> (Windows) ·
+    Разработчик: <b>Bohdan Bobok</b> ·
+    Дата вступления в силу: <b>23 сентября 2026 г.</b>
+  </p>
+  <div class="langs">
+    <button type="button" data-lang="ru" aria-pressed="true">Русский</button>
+    <button type="button" data-lang="en" aria-pressed="false">English</button>
+  </div>
+</header>
+
+<section id="ru">
+  <div class="lede">
+    <p>Приложение не собирает, не хранит и никуда не передаёт персональные
+    данные. Ваши звуковые файлы не покидают компьютер.</p>
+  </div>
+
+  <h2>Что происходит с вашими файлами</h2>
+  <p>Открытый файл читается с диска, обрабатывается на вашей машине встроенной
+  копией FFmpeg и записывается в выбранную вами папку. Никуда ничего не
+  загружается. Учётной записи, входа и облачного хранилища у программы нет.</p>
+  <p>Во время работы программа держит временные файлы — разжатый звук, по
+  которому рисуется огибающая и проигрывается выделенный фрагмент, — в
+  <code>%LOCALAPPDATA%\AudioConverterCutter\cache</code>. Они удаляются сами
+  через сутки, а в настройках есть кнопка, которая убирает их немедленно.</p>
+  <p>Настройки (тема, язык, папка сохранения, размер окна) хранятся на вашем
+  компьютере, в
+  <code>%APPDATA%\AudioConverterCutter\settings.properties</code>.</p>
+
+  <h2>Единственное обращение в сеть</h2>
+  <p>Экран <b>«Наши приложения»</b> показывает другие приложения того же
+  разработчика. Чтобы его нарисовать, программа запрашивает у
+  <code>apps.microsoft.com</code> открытые страницы этих приложений и читает их
+  названия и логотипы. Это происходит не чаще раза в сутки, не передаёт о вас
+  никаких сведений и не требует учётной записи. Если интернета нет, экран
+  просто показывает то, что было в сборке.</p>
+  <p>Больше программа в сеть не выходит.</p>
+
+  <h2>Какие данные собираются</h2>
+  <p>Никакие. В программе нет ни аналитики, ни рекламы, ни отправки отчётов об
+  ошибках.</p>
+
+  <h2>Дети</h2>
+  <p>Программа подходит для любого возраста и ни у кого не собирает данные.</p>
+
+  <h2>Сторонние компоненты</h2>
+  <p>Звук обрабатывает <a href="https://ffmpeg.org">FFmpeg</a> — без изменений,
+  на условиях GNU Lesser General Public License v3. FFmpeg работает локально,
+  отдельной программой, и в сеть не выходит. Его исходный код, включая ровно ту
+  сборку, что лежит внутри приложения, доступен на
+  <a href="https://github.com/BtbN/FFmpeg-Builds/releases">странице выпусков
+  BtbN/FFmpeg-Builds</a>.</p>
+
+  <h2>Изменения</h2>
+  <p>Если политика изменится, новая версия будет опубликована по тому же адресу,
+  а дата выше — обновлена.</p>
+
+  <h2>Связь</h2>
+  <p>Вопросы по этой политике:
+  <a href="mailto:bogdabobok06081995@gmail.com">bogdabobok06081995@gmail.com</a></p>
+</section>
+
+<section id="en" class="hidden">
+  <div class="lede">
+    <p>Audio Converter and Cutter does not collect, store or transmit any
+    personal data. Your audio files never leave your computer.</p>
+  </div>
+
+  <h2>What the app does with your files</h2>
+  <p>Audio you open is read from your disk, processed on your machine by a
+  bundled copy of FFmpeg, and written to the folder you choose. Nothing is
+  uploaded anywhere. The app has no account, no sign-in and no cloud storage.</p>
+  <p>While it works, the app keeps temporary files — decoded audio used to draw
+  the waveform and to play the selected fragment — in
+  <code>%LOCALAPPDATA%\AudioConverterCutter\cache</code>. They are deleted
+  automatically after a day, and the Settings screen has a button to remove them
+  immediately.</p>
+  <p>Your settings (theme, language, output folder, window size) are stored in
+  <code>%APPDATA%\AudioConverterCutter\settings.properties</code> on your
+  computer.</p>
+
+  <h2>The only network request</h2>
+  <p>The <b>Our apps</b> screen shows other applications by the same developer.
+  To draw it, the app requests the public product pages of those applications
+  from <code>apps.microsoft.com</code> and reads their names and logos. This
+  happens at most once a day, sends no information about you, and requires no
+  account. If there is no internet connection, the screen simply shows what was
+  bundled with the app.</p>
+  <p>Nothing else in the app connects to the internet.</p>
+
+  <h2>Data collected</h2>
+  <p>None. The app contains no analytics, no advertising and no crash
+  reporting.</p>
+
+  <h2>Children</h2>
+  <p>The app is suitable for all ages and collects no data from anyone,
+  including children.</p>
+
+  <h2>Third-party components</h2>
+  <p>Audio processing uses <a href="https://ffmpeg.org">FFmpeg</a>, used
+  unmodified under the GNU Lesser General Public License v3. FFmpeg runs locally
+  as a separate program and makes no network connections. Its source code,
+  including the exact build shipped inside the app, is available at the
+  <a href="https://github.com/BtbN/FFmpeg-Builds/releases">BtbN/FFmpeg-Builds
+  releases page</a>.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the new version will be published at the same
+  address and the date above will be updated.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy:
+  <a href="mailto:bogdabobok06081995@gmail.com">bogdabobok06081995@gmail.com</a></p>
+</section>
+
+<footer>
+  <p>© 2026 Bohdan Bobok</p>
+</footer>
+
+</div>
+
+<script>
+  // Переключатель языка. Без скриптов видны оба раздела — это лучше, чем пустая
+  // страница у проверяющего из Store.
+  (function () {
+    var buttons = document.querySelectorAll('.langs button');
+    function show(lang) {
+      document.getElementById('ru').classList.toggle('hidden', lang !== 'ru');
+      document.getElementById('en').classList.toggle('hidden', lang !== 'en');
+      document.documentElement.lang = lang;
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+      });
+    }
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { show(b.dataset.lang); });
+    });
+    show((navigator.language || 'ru').slice(0, 2) === 'ru' ? 'ru' : 'en');
+  })();
+</script>
+</body>
+</html>
